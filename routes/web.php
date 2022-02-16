@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'DefaultController@default')->name('site.index');
+Route::get('/about-us', 'AboutUsController@aboutUs')->name('site.about-us');
+Route::get('/contact', 'ContactController@contact')->name('site.contact');
+Route::get('/login', function() { return 'login';})->name('login');
+
+
+Route::prefix('app')->group(function() {
+    Route::get('/customers', function() { return 'customers';})->name('app.customers');
+    Route::get('/providers', function() { return 'providers';})->name('app.providers');
+    Route::get('/products', function() { return 'products';})->name('app.products');
+});
+
+Route::fallback(function() {
+    echo 'The route accessed does not exist. Please, <a href="'.route('site.index').'">click here</a> to return'; 
 });
