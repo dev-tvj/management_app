@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DefaultController@default')->name('site.index');
 Route::get('/about-us', 'AboutUsController@aboutUs')->name('site.about-us');
-Route::get('/contact', 'ContactController@contact')->name('site.contact');
-Route::get('/login', function() { return 'login';})->name('login');
 
+Route::get('/contact', 'ContactController@contact')->name('site.contact');
+Route::post('/contact', 'ContactController@contact')->name('site.contact');
+
+Route::get('/login', function() { return 'login';})->name('login');
 
 Route::prefix('app')->group(function() {
     Route::get('/customers', function() { return 'customers';})->name('app.customers');

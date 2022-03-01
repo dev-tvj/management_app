@@ -1,15 +1,38 @@
-<h3>Default View</h3>
+@extends('site.layouts.basic')
 
-<!-- Application menu  -->
-<ul>
-    <li>
-        <a href="{{ route('site.index') }}">Default</a>
-    </li>
-    <li>
-        <a href=" {{ route('site.about-us') }}">About us</a>
-    </li>
-    <li>
-        <a href=" {{ route('site.contact') }}">Contact</a>
-    </li>
-</ul>
+@section('title', 'Home')
 
+@section('content')
+
+    <div class="high-content">
+
+        <div class="left">
+            <div class="infos">
+                <h1>Management App</h1>
+                <p>Software for business management, ideal for your company!<p>
+                <div class="call">
+                    <img src="{{ asset('img/check.png') }}">
+                    <span class="white-text">Complete and uncomplicated management</span>
+                </div>
+                <div class="call">
+                    <img src="{{ asset('img/check.png') }}">
+                    <span class="white-text">Your company in the cloud</span>
+                </div>
+            </div>
+
+            <div class="video">
+                <img src="{{ asset('img/player_video.jpg') }}">
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="contact">
+                <h1>Contact</h1>
+                <br>
+                @component('site.layouts._components.form_contact')
+                @endcomponent
+            </div>
+        </div>
+    </div>
+
+@endsection
