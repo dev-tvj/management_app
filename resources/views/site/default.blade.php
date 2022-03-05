@@ -29,7 +29,7 @@
             <div class="contact">
                 <h1>Contact</h1>
                 <br>
-                @component('site.layouts._components.form_contact')
+                @component('site.layouts._components.form_contact', ['contact_reasons' => $contact_reasons])
                 @endcomponent
             </div>
         </div>
