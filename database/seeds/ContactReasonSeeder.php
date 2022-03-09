@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use \App\ContactReason;
+use App\ContactReason;
 
 class ContactReasonSeeder extends Seeder
 {

@@ -6,6 +6,7 @@
     <br>
     <input name="email" value="{{ old('email') }}" type="text" placeholder="E-mail" class="black-border">
     <br>
+
     <select name="contact_reason" class="black-border">
         <option value="">What is the reason for the contact?</option>
         
@@ -18,10 +19,13 @@
     <textarea name="message" class="black-border">{{ (old('message') != '') ? old('message') : 'Fill your message here...' }} </textarea>
     <br>
     <button type="submit" class="black-border">SUBMIT</button>
+
 </form>
 
-<div style="position: absolute; top:0px; left:0px; width:100%; background:red;">
+{{-- {{ print_r($contact_reasons) }} --}}
+
+{{-- <div style="position: absolute; top:0px; left:0px; width:100%; background:red;">
     <pre>
         {{print_r($errors)}}
     </pre>
-</div>
+</div> --}}
